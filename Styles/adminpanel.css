@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+@import url('https://fonts.googleapis.com/css2?family=Style+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap');
+
+
+* {
+   font-size: 62.5%;
+}
+
+h2 {
+   font-family: "Open Sans Condensed", sans-serif;
+   font-size: 4rem;
+   font-weight: 100;
+   text-align: center;
+}
+table{
+   width: 100%;
+   font-size: 1rem;
+}
+tr, td, th{
+   font-size: 1.4rem;
+   text-align: center;
+}
+th{
+   padding:10px 10px;
+}
+
+
+
+p{
+   font-family: "Open Sans Condensed", sans-serif;
+   font-size:1.4rem;
+   font-weight:normal;
+   padding:0px 40px;
+}
+button{
+   align-items: center;
+   border: none;
+   background-color: transparent;
+}
+button:hover{
+   cursor: pointer;
+   background-color: teal;
+   transition: 0.4s;
+   color:white;
+}
+
+.logout{
+   float:right;
+}
+input{
+   background:transparent;
+   border: none;
+   width:100px;
+   height:50px;
+   font-size: 15px;
+}
+input:hover{
+   cursor: pointer;
+   transition: 0.4s;
+   color: white;
+   background-color: darkslategray;
+}

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="Styles/signup.css">
+   <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <title>Document</title>
+
+   <script type="text/javascript">
+      function validate() {
+
+
+         var regex = /^[a-zA-Z\s]+$/;
+         var uexp = /^(?=[a-zA-Z0-9._]{8,20}$)(?!.*[_.]{2})[^_.].*[^_.]$/;
+         var pexp = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+
+         var fname = document.getElementById("fname");
+         if (fname.value == "") {
+            alert("First name needed");
+            return false;
+         } else {
+            var finame = document.signup_form.firstname.value;
+            if (regex.test(finame) === false) {
+               alert("Only letters allowed for name");
+               return false;
+            }
+         }
+
+            var lname = document.getElementById("lname");
+            if (lname.value == "") {
+               alert("Last name needed");
+               return false;
+            } else {
+               var laname = document.signup_form.lastname.value;
+               if (regex.test(laname) === false) {
+                  alert("Only letters allowed for name");
+                  return false;
+               }
+
+            }
+            var d = document.getElementById("selectcity");
+            var optionindex = d.options[d.selectedIndex].value;
+            var optionselectedtext = d.options[d.selectedIndex].text;
+            if (optionindex == 0) {
+               alert("Please choose your city");
+               return false;
+            }
+            var ward = document.getElementById("wardno");
+            if (ward.value == "") {
+               alert("Please enter your ward no");
+               return false;
+            }
+            var stree = document.getElementById("streetid");
+            if (stree.value == "") {
+               alert("Please state your street name");
+               return false;
+            } else {
+               var strname = document.signup_form.street.value;
+               if (regex.test(strname) === false) {
+                  alert("Enter valid street name");
+                  return false;
+               }
+            }
+            var contact = document.getElementById("contactid");
+            if (contact.value == "" || contact.value < 10) {
+               alert("Please enter valid phone number");
+               return false;
+            }
+            var user = document.getElementById("userid");
+            if (user.value == "") {
+               alert("Username must be at least 6 characters long");
+               return false;
+            } else {
+               if (uexp.test(user.value) === false) {
+                  alert("Only . and _ sllowed for username");
+                  return false;
+               }
+            }
+            var pw1 = document.getElementById("password");
+            var pw2 = document.getElementById("password2");
+            if (pw1.value == "" || pw2.value == "" || pw1.value != pw2.value) {
+               alert("Passwords either empty or donot match");
+               return false;
+            } else {
+               if (pexp.test(pw1.value) === false || pexp.test(pw2.value) === false) {
+                  alert("Use letters, numbers and special characters for Password");
+                  return false;
+               }
+            }
+      }
+
+      function toggle() {
+         var x = document.getElementById("password");
+         if (x.type === "password") {
+            x.type = "text";
+         } else {
+            x.type = "password";
+         }
+      }
+
+      function toggle2() {
+         var y = document.getElementById("password2");
+         if (y.type === "password") {
+            y.type = "text";
+         } else {
+            y.type = "password";
+         }
+      }
+   </script>
+
+</head>
+
+<body>
+   <nav>
+      <a href="index.php"> <img src="Images/suddha.png" alt=""></a>
+   </nav>
+   <div class="container">
+      <div class="signup-box">
+         <div class="header">
+            <i class="fas fa-user-circle fa-5x"></i>
+            <h1>Sign up</h1>
+            <p>Enter Sign up details</p>
+         </div>
+         <form method="POST" name="signup_form" onsubmit="return validate(); " action="Insertdata.php">
+            <div class="form-group">
+               <label for="firstname">Firstname:</label>
+
+               <input type="text" name="firstname" id="fname">
+
+               <label for="lastname">Lastname:</label>
+               <input type="text" name="lastname" id="lname">
+
+               <label for="city">City:</label>
+               <select name="city" id="selectcity">
+                  <option disabled selected value>---Select a city---</option>
+                  <option value="Kathmandu">Kathmandu</option>
+                  <option value="Lalitpur">Lalitpur</option>
+                  <option value="Bhaktapur">Bhaktapur</option>
+               </select>
+
+               <label for="ward">Ward no:</label>
+               <input type="number" class="address" name="ward" id="wardno" min="1" max="15"><br>
+
+               <label for="Street">Street</label>
+               <input type="text" class="address" id="streetid" name="street"><br>
+
+               <label for="tel">Contact no:</label>
+               <input type="tel" name="tel" id="contactid" placeholder="98-1234-1234"><br>
+
+               <label for="uname">Set Username:</label>
+               <input type="text" name="uname" id="userid"><br>
+
+               <label for="pwd">Password</label>
+               <input type="password" name="pwd" id="password" />
+               <br>
+               <input type="checkbox" class="visible" onclick="toggle();"><i>Show password</i><br>
+
+               <span>
+                  <label for="pwd2">Re-Enter Password</label>
+                  <input type="password" name="pwd2" id="password2"><br>
+                  <input type="checkbox" class="visible" onclick="toggle2();"><i>Show password</i><br>
+               </span>
+
+               <input type="submit" value="submit" name="submit_form" class="signup-btn"></button>
+               <a href="login.html">Already a User?</a>
+            </div>
+         </form>
+         <p id="error_para"></p>
+      </div>
+      <img src="Images/Data2.svg" class="back" alt="">
+
+   </div>
+
+</body>
+
+</html>

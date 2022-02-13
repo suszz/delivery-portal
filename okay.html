@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+   <script>
+      $(document).ready(function () {
+    $("#Item_type").change(function () {
+        var val = $(this).val();
+        if (val == "lpgas") {
+            $("#item-name").html("<option value='nepalgas'>Nepal Gas</option><option value='trishul'>Trishul</option><option value='everest'>Everest</option><option value='baba'>Baba</option>");
+        } else if (val == "waterjar") {
+            $("#item-name").html("<option value='test2' selected disabled>item2: test 2</option>");
+        }
+    });
+});
+   </script>
+<select name="" id="Item_type" required="">
+   <option value="" selected disabled>-</option>
+   <option value="lpgas">Lp gas</option>
+   <option value="waterjar">Water Jar</option>
+</select><br>
+<select id="item-name">
+    <option value="">-- select one -- </option>
+</select>
+</body>
+</html>

@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap');
+
+
+* {
+   padding: 0;
+   margin: 0;
+   font-family: "Open Sans", sans-serif;
+}
+
+body {
+   background-color: black;
+   background-size: cover;
+   background-position: center;
+}
+
+a{
+   text-decoration: none;
+   color:whitesmoke;
+}
+h1 {
+   padding:10px 5px 0;
+   font-size:30px;
+   font-weight: 300;
+   color:whitesmoke;
+   font-family: "Montserrat";
+   text-decoration: none;
+   width: 30%;
+}
+
+
+h3 {
+   font-weight: 700;
+   color: #141E30;
+   font-family: "Poppins", sans-serif;
+}
+
+p {
+   line-height: 1.7;
+   color: rgb(14, 13, 13);
+   padding: 10px 0 10px;
+}
+
+.container {
+   height: 95vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.container .login-box {
+   height: 490px;
+   width: 440px;
+   border-radius: 15px;
+   padding: 35px;
+   display: flex;
+   flex-direction: column;
+}
+
+.container .login-box .heading {
+   text-align: center;
+   margin-top: 20px;
+   margin-bottom: 20px;
+}
+
+.container .login-box .heading h3 {
+   font-size: 23px;
+   color: white;
+   text-align: center;
+}
+
+.container .login-box .heading p {
+   color: white;
+   position: relative;
+}
+
+.container .login-box .heading p::after {
+   content: "";
+   width: 130px;
+   height: 4px;
+   background-color: #f2f4f8;
+   position: absolute;
+   bottom: -30%;
+   left: 35%;
+}
+
+.container .login-box form {
+   display: flex;
+   flex-direction: column;
+   height: 100vh;
+}
+
+.container .login-box form .form-group {
+   position: relative;
+   margin-top: 35px;
+}
+
+.container .login-box form .form-group input {
+   width: 100%;
+   position: relative;
+   outline: 0;
+   background: #ffffff;
+   padding: 10px 0px;
+   border-radius: 5px;
+   transition: all 650ms ease;
+   border: 1px solid #273463;
+   font: 12px "Poppins";
+}
+
+.container .login-box form .form-group label {
+   position: absolute;
+   left: 10px;
+   top: 7px;
+   font: 16px "Poppins";
+   transition: all 0.3s ease;
+   color: #273463;
+}
+
+.container .login-box form .form-group input:focus,
+.container .login-box form .form-group input:valid {
+   background: #ffffff;
+   color: #273463;
+   padding-left: 10px;
+   margin-left: -5px;
+   font-size: 14px;
+   -webkit-box-shadow: -2px 2px 13px 0px rgba(185, 185, 185, 0.75);
+   -moz-box-shadow: -2px 2px 13px 0px rgba(185, 185, 185, 0.75);
+   box-shadow: -2px 2px 13px 0px rgba(185, 185, 185, 0.75);
+}
+
+.container .login-box form .form-group input:focus~label,
+.container .login-box form .form-group input:valid~label {
+   transform: translate3d(0px, -31px, 0px);
+   font: 16px/42px "Poppins";
+   color: #f1f3f7;
+   left: 0px;
+   top: 0px;
+}
+
+.container .login-box form .check-box {
+   display: inline-block;
+   font-family: "Poppins", sans-serif;
+   font-size: 14px;
+   padding: 15px 0px 5px 0px;
+   color: #f0f1f3;
+   position: relative;
+   overflow: hidden;
+   z-index: 1;
+   cursor: pointer;
+}
+
+
+.container .login-box .login-btn {
+   align-items: center;
+   width: 30%;
+   height: 45px;
+   background:whitesmoke;
+   border-radius: 8px;
+   border: 2px solid #334b79;
+   font-size: 15px;
+   font-weight: bold;
+   color:black;
+   position: relative;
+   overflow: hidden;
+   z-index: 1;
+   margin: 20px 0 20px;
+   cursor: pointer;
+}
+
+.container .login-box .login-btn:hover {
+   color:whitesmoke;
+   background-color: darkslategray;
+   cursor: pointer;
+   transition: 0.4s ease-out;
+}
+
